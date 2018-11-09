@@ -8,6 +8,7 @@ using eShop_NETCoreMVC.Models;
 
 namespace eShop_NETCoreMVC.Controllers
 {
+  [Area("Customer")]
   public class HomeController : Controller
   {
     public IActionResult Index()
