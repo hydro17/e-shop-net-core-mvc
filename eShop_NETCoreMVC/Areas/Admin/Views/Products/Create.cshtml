@@ -1,0 +1,46 @@
+﻿@model eShop_NETCoreMVC.Models.Product
+@{
+  ViewData["Title"] = "Create";
+}
+
+<br /><br />
+
+<h3 class="text-info">Create New Product</h3>
+
+<form method="post" asp-action="Create" class="p-4 border rounded">
+  <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+  <div class="row form-group">
+    <div class="col-2">
+      <label asp-for="Name"></label>
+    </div>
+
+    <div class="col-5">
+      <input asp-for="Name" class="form-control" />
+    </div>
+
+    <span asp-validation-for="Name" class="text-danger"></span>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <label asp-for="Price"></label>
+    </div>
+
+    <div class="col-5">
+      <input asp-for="Price" class="form-control" />
+    </div>
+
+    <span asp-validation-for="Price" class="text-danger"></span>
+  </div>
+
+  <br />
+
+  <input type="submit" class="btn btn-primary" value="Submit" />
+  <a asp-action="Index" class="btn btn-success">Back to List</a>
+</form>
+
+@section Scripts{
+  @{ await Html.RenderPartialAsync("_ValidationScriptsPartial.cshtml");}
+}
+
